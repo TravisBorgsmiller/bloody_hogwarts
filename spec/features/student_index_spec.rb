@@ -1,14 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe "As a user" do
-  describe "when i visit students index", type: :feature do
+  describe "when i visit /students", type: :feature do
     before :each do
 
-      @student_1 = Student.create( :name "Student name"
-                                   :age 14
-                                   :house 'Slytherin' )
+      @student_1 = Student.create!(:name "Casseaus Black",
+                                   :age 14,
+                                   :house "Slytherin")
 
-      visit '/students'
+      visit "/students"
       end
 
       it 'I see a list of students with name, age, and house displayed' do
